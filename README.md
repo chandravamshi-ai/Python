@@ -11,7 +11,7 @@
 - [Python Course by Dr. Angela Yu on Udemy](https://click.linksynergy.com/linkid=vzG/OMx7ecI&offerid=1388962.3919715219197173821843440&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2F100-days-of-code%2F)
 
 
-### 1. Python Basics
+#### 1. Python Basics
 
    #### a. Basic Syntax
    1. **Hello World**
