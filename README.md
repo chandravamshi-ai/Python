@@ -8,8 +8,7 @@
 - [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
 - [Python Documentation](https://docs.python.org/3/)
 - [Learning Python – O’Reilly](https://www.oreilly.com/library/view/learning-python/1565924649/)
-- [Python Course by Dr. Angela Yu on Udemy ]
-  (https://click.linksynergy.com/linkid=vzG/OMx7ecI&offerid=1388962.3919715219197173821843440&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2F100-days-of-code%2F)
+- [Python Course by Dr. Angela Yu on Udemy(https://click.linksynergy.com/linkid=vzG/OMx7ecI&offerid=1388962.3919715219197173821843440&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2F100-days-of-code%2F)
 
 
 ### 1. Python Basics
