@@ -14,7 +14,7 @@
 #### 1. Python Basics
 
    a. Basic Syntax
-   
+
       1. **Hello World**
          - Write your first Python program that prints "Hello, World!"
          - Understand the structure of a simple Python script.
