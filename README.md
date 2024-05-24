@@ -33,6 +33,7 @@
          - **Resource**: [Python Naming Conventions](https://pep8.org/#naming-conventions)
    
    b. Modules & PIP
+   
       1. **Importing Modules**
          - Learn how to import and use standard library modules, e.g., `import math`.
          - **Resource**: [Python Official Documentation - Modules](https://docs.python.org/3/tutorial/modules.html)
@@ -46,6 +47,7 @@
          - Practice using installed packages in your projects.
    
    c. Variables & Data Types
+   
       1. **Variables**
          - Learn how to declare and initialize variables.
          - Example: `x = 10`.
@@ -62,6 +64,7 @@
          - **Resource**: [Python Type Conversion](https://www.geeksforgeeks.org/type-conversion-python/)
       
    d. Conditionals and Loops
+   
       1. **If-Else Statements**
          - Write conditional statements using if, elif, and else.
          - Example: `if x > 0: print("Positive")`.
@@ -83,6 +86,7 @@
          - **Resource**: [Python Break and Continue](https://www.w3schools.com/python/python_while_loops.asp)
    
    e. Functions & Recursion
+   
       1. **Defining Functions**
          - Learn how to define and call functions.
          - Example: `def greet(): print("Hello!")`.
@@ -104,6 +108,7 @@
          - **Resource**: [Python Recursion](https://www.geeksforgeeks.org/recursion/)
    
    f. Collections: List, Tuple, Sets, Dictionaries
+   
       1. **Lists**
          - Create and manipulate lists, including slicing and list comprehensions.
          - Example: `my_list = [1, 2, 3]`.
@@ -125,6 +130,7 @@
          - **Resource**: [Python Dictionaries](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
    
    g. File I/O
+   
       1. **Reading Files**
          - Learn how to open and read files in Python.
          - Example: `with open('file.txt', 'r') as file: contents = file.read()`.
