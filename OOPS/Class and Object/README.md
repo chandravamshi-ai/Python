@@ -1,4 +1,4 @@
-I apologize for not providing enough foundational details in the previous response. Let's go step-by-step and cover the basics and most important concepts of Object-Oriented Programming (OOP) in Python, focusing on the `__init__` method, parent-child relationships, and other essential concepts.
+Let's go step-by-step and cover the basics and most important concepts of Object-Oriented Programming (OOP) in Python, focusing on the `__init__` method, parent-child relationships, and other essential concepts.
 
 ### Object-Oriented Programming (OOP) Basics
 
