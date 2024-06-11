@@ -1,4 +1,4 @@
-Sure! Let's start with the basics of Object-Oriented Programming (OOP) in Python, focusing on the parent (base) and child (derived) class relationships. We'll cover the following concepts:
+Let's start with the basics of Object-Oriented Programming (OOP) in Python, focusing on the parent (base) and child (derived) class relationships. We'll cover the following concepts:
 
 1. What is a class?
 2. What is inheritance?
