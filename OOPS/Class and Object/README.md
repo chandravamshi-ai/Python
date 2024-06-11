@@ -324,6 +324,138 @@ Output:
 Buddy barks.
 ```
 
+### Understanding Method Overriding in Python
+
+Method overriding is a fundamental concept in object-oriented programming (OOP) where a child class (derived class) provides a specific implementation of a method that is already defined in its parent class (base class). This allows the child class to modify or extend the behavior of the method defined in the parent class.
+
+### Key Points about Method Overriding
+
+1. **Inheritance**: Method overriding only occurs when there is inheritance, meaning a child class inherits from a parent class.
+2. **Same Method Name**: The method in the child class must have the same name as the method in the parent class.
+3. **Same Parameters**: The method in the child class should have the same parameters as the method in the parent class.
+4. **Extend or Replace**: The child class method can completely replace the parent class method's behavior or extend it by calling the parent method using `super()`.
+
+### Example Explanation
+
+Let's break down the given example step-by-step to understand method overriding.
+
+```python
+class Animal:
+    def __init__(self, name, species):
+        self.name = name
+        self.species = species
+
+    def make_sound(self):
+        print(f"{self.name} makes a sound.")
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name, "Dog")  # Call the parent class's __init__ method
+        self.breed = breed
+
+    def make_sound(self):
+        print(f"{self.name} barks.")
+
+# Create an object of Dog
+dog = Dog("Buddy", "Golden Retriever")
+dog.make_sound()  # This will call the make_sound method of Dog class
+```
+
+### Step-by-Step Explanation
+
+1. **Parent Class `Animal`**:
+   - The `Animal` class has an `__init__` method that initializes the `name` and `species` attributes.
+   - It also has a `make_sound` method that prints a generic sound message.
+
+```python
+class Animal:
+    def __init__(self, name, species):
+        self.name = name
+        self.species = species
+
+    def make_sound(self):
+        print(f"{self.name} makes a sound.")
+```
+
+2. **Child Class `Dog`**:
+   - The `Dog` class inherits from `Animal`.
+   - The `Dog` class overrides the `__init__` method to add the `breed` attribute.
+   - It calls the parent class's `__init__` method using `super().__init__(name, "Dog")` to initialize the `name` and `species` attributes.
+   - The `Dog` class also overrides the `make_sound` method to provide a specific implementation for dogs (barking).
+
+```python
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name, "Dog")  # Call the parent class's __init__ method
+        self.breed = breed
+
+    def make_sound(self):
+        print(f"{self.name} barks.")
+```
+
+3. **Creating an Object of `Dog`**:
+   - When you create an instance of `Dog` with `dog = Dog("Buddy", "Golden Retriever")`, the `__init__` method of `Dog` is called.
+   - This initializes the `name` attribute to "Buddy" and the `species` attribute to "Dog" (by calling the parent class's `__init__` method), and also initializes the `breed` attribute to "Golden Retriever".
+
+```python
+dog = Dog("Buddy", "Golden Retriever")
+```
+
+4. **Calling the Overridden Method**:
+   - When you call `dog.make_sound()`, the `make_sound` method of the `Dog` class is called, not the `Animal` class.
+   - This prints "Buddy barks." instead of "Buddy makes a sound."
+
+```python
+dog.make_sound()  # Output: Buddy barks.
+```
+
+### Using `super()` to Extend the Parent Method
+
+If you want to extend the behavior of the parent class method rather than completely replacing it, you can use `super()` to call the parent class method within the overridden method.
+
+### Example with `super()`
+
+```python
+class Animal:
+    def __init__(self, name, species):
+        self.name = name
+        self.species = species
+
+    def make_sound(self):
+        print(f"{self.name} makes a sound.")
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name, "Dog")
+        self.breed = breed
+
+    def make_sound(self):
+        super().make_sound()  # Call the parent class's make_sound method
+        print(f"{self.name} barks.")
+
+# Create an object of Dog
+dog = Dog("Buddy", "Golden Retriever")
+dog.make_sound()
+```
+
+Output:
+```
+Buddy makes a sound.
+Buddy barks.
+```
+
+In this example:
+- The `Dog` class's `make_sound` method first calls the `make_sound` method of the `Animal` class using `super().make_sound()`.
+- Then, it adds its own behavior by printing "Buddy barks."
+
+### Summary
+
+- **Method Overriding**: Allows a child class to provide a specific implementation of a method that is already defined in its parent class.
+- **`super()`**: Used to call methods from the parent class within the child class's overridden methods.
+- **Inheritance**: Method overriding only works when there is a parent-child relationship between classes.
+
+By understanding and using method overriding, you can create more flexible and reusable code in your Python programs.
+
 ### 5. Using `super()`
 
 The `super()` function allows you to call methods from the parent class.
