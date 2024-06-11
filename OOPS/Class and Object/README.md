@@ -2,12 +2,12 @@ Let's go step-by-step and cover the basics and most important concepts of Object
 
 ### Object-Oriented Programming (OOP) Basics
 
-1. **Classes and Objects**
-2. **The `__init__` Method**
-3. **Inheritance**
-4. **Overriding Methods**
-5. **Using `super()`**
-6. **Attributes and Methods**
+- [Classes and Objects](#classes-and-objects)
+- [The `__init__` Method](#the-__init__-method)
+- [Inheritance](#inheritance)
+- [Overriding Methods](#overriding-methods)
+- [Using `super()`](#using-super)
+- [Attributes and Methods](#attributes-and-methods)
 
 ### 1. Classes and Objects
 
