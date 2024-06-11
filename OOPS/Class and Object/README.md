@@ -46,6 +46,15 @@ dog = Animal("Buddy", "Dog")
 dog.describe() # Output: Buddy is a Dog.
 ```
 
+**`Understanding `self` in Python**
+
+In Python, self is used to represent the instance of the class. It allows access to the attributes and methods of the class in object-oriented programming. When you create an instance of a class, self helps to differentiate between instance attributes (variables) and local variables within methods.
+
+**Key Points about self**
+* Represents the Instance: self represents the instance of the class. It is used to access variables and methods associated with the current object.
+* First Parameter in Methods: self is always the first parameter in the instance methods of a class, but it does not need to be passed explicitly when calling the method.
+* Naming: You can name the first parameter of instance methods anything you like (it's just a convention to use self), but self is widely accepted and recommended for clarity.
+
 ### 3. Inheritance
 
 Inheritance allows a class (child class) to inherit attributes and methods from another class (parent class). This helps in reusing code and creating a hierarchical relationship between classes.
