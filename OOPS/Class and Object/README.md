@@ -224,6 +224,74 @@ Buddy is a Dog.
 Buddy is a Golden Retriever breed.
 ```
 
+In Python, the object `dog` is both an instance of the `Dog` class and, by inheritance, also an instance of the `Animal` class. This is because the `Dog` class inherits from the `Animal` class, meaning `Dog` is a subclass of `Animal`.
+
+Here's a step-by-step explanation:
+
+1. **Class Definitions**:
+   - `Animal` is the parent (or base) class.
+   - `Dog` is the child (or derived) class that inherits from `Animal`.
+
+2. **Inheritance**:
+   - When `Dog` is defined as inheriting from `Animal` (`class Dog(Animal):`), it means that `Dog` inherits all attributes and methods of `Animal`.
+
+3. **Instance Creation**:
+   - When you create an instance of `Dog` using `dog = Dog("Buddy", "Golden Retriever")`, Python internally creates an instance of `Dog`, which also includes the `Animal` attributes and methods because of inheritance.
+
+4. **Type and Instance Checks**:
+   - You can check the type of `dog` using the `type()` function.
+   - You can also check whether `dog` is an instance of a particular class using `isinstance()`.
+
+### Example and Explanation
+
+```python
+class Animal:
+    def __init__(self, name, species):
+        self.name = name
+        self.species = species
+
+    def describe(self):
+        print(f"{self.name} is a {self.species}.")
+
+# Child class inheriting from Animal
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name, "Dog")  # Call the parent class's __init__ method
+        self.breed = breed
+
+    def describe(self):
+        super().describe()  # Call the parent class's describe method
+        print(f"{self.name} is a {self.breed} breed.")
+
+# Create an object of Dog
+dog = Dog("Buddy", "Golden Retriever")
+dog.describe()
+
+# Checking types and instances
+print(type(dog))  # Output: <class '__main__.Dog'>
+print(isinstance(dog, Dog))  # Output: True
+print(isinstance(dog, Animal))  # Output: True
+```
+
+### Explanation of the Output
+
+1. **`type(dog)`**:
+   - This will output `<class '__main__.Dog'>`, indicating that `dog` is an instance of the `Dog` class.
+
+2. **`isinstance(dog, Dog)`**:
+   - This will output `True`, confirming that `dog` is indeed an instance of the `Dog` class.
+
+3. **`isinstance(dog, Animal)`**:
+   - This will also output `True`, confirming that `dog` is an instance of the `Animal` class as well, due to inheritance.
+
+### Summary
+
+- `dog` is an instance of the `Dog` class.
+- Because `Dog` inherits from `Animal`, `dog` is also an instance of the `Animal` class.
+- This allows `dog` to use methods and attributes from both `Dog` and `Animal`.
+
+By inheritance, `Dog` is a specialized form of `Animal`. Therefore, an instance of `Dog` is also considered an instance of `Animal`. This concept is fundamental in OOP and allows for code reuse and polymorphism.
+
 ### 4. Overriding Methods
 
 The child class can override methods from the parent class to provide specific behavior.
