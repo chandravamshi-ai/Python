@@ -11,7 +11,7 @@ Let's go step-by-step and cover the basics and most important concepts of Object
 
 ### 1. Classes and Objects
 
-- **Class**: A blueprint for creating objects (a particular data structure).
+- **Class**: A blueprint for creating objects (a particular data structure) and can have properties (attributes) and behaviors (methods)
 - **Object**: An instance of a class.
 
 ### Example:
