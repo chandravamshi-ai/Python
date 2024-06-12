@@ -1,11 +1,7 @@
 Let's start with the basics of Object-Oriented Programming (OOP) in Python, focusing on the parent (base) and child (derived) class relationships. We'll cover the following concepts:
 
 1. [What is a class?](#what-is-a-class)
-2. [What is inheritance?](#what-is-inheritance)
-3. [Creating a parent class](#creating-a-parent-class)
-4. [Creating a child class that inherits from the parent class](#creating-a-child-class-that-inherits-from-the-parent-class)
-5. [Overriding methods in the child class](#overriding-methods-in-the-child-class)
-6. [Using `super()` to call the parent class methods](#using-super-to-call-the-parent-class-methods)
+
 
 
 ### 1. What is a Class?
