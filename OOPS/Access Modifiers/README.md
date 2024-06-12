@@ -44,7 +44,7 @@ Buddy
 Buddy makes a sound.
 ```
 
-### 3. Protected Access
+### Protected Access
 
 - **Protected members** are intended to be accessed within the class and its subclasses.
 - In Python, protected members are indicated by a single underscore prefix (`_`).
@@ -79,7 +79,7 @@ Output:
 Buddy is a Dog of breed Golden Retriever.
 ```
 
-### 4. Private Access
+### Private Access
 
 - **Private members** are intended to be accessed only within the class itself.
 - In Python, private members are indicated by a double underscore prefix (`__`).
@@ -110,7 +110,7 @@ Output:
 Buddy is a Dog.
 ```
 
-### 5. Understanding Name Mangling
+### Understanding Name Mangling
 
 Python uses name mangling to make private attributes and methods inaccessible from outside the class by renaming them internally. This is done by prefixing the member name with `_ClassName`.
 
@@ -144,7 +144,7 @@ Buddy
 Buddy
 ```
 
-### 6. Using Properties for Encapsulation
+### Using Properties for Encapsulation
 
 Python provides a way to encapsulate data and control access using properties. Properties allow you to use getters and setters to access and modify private attributes.
 
