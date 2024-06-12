@@ -1,12 +1,38 @@
 Let's dive into access modifiers in Python. Python's approach to access modifiers is different from other languages like Java or C++. While it doesn't enforce strict access control, it provides conventions and mechanisms to indicate the intended level of access. We'll cover the following key concepts:
 
-1. **Introduction to Access Modifiers**
-2. **Public Access**
-3. **Protected Access**
-4. **Private Access**
-5. **Understanding Name Mangling**
-6. **Using Properties for Encapsulation**
-7. **Examples and Practical Usage**
+# Access Modifiers in Python
+
+## Table of Contents
+- [Introduction to Access Modifiers](#introduction-to-access-modifiers)
+- [Public Access](#public-access)
+- [Protected Access](#protected-access)
+- [Private Access](#private-access)
+- [Understanding Name Mangling](#understanding-name-mangling)
+- [Using Properties for Encapsulation](#using-properties-for-encapsulation)
+- [Examples and Practical Usage](#examples-and-practical-usage)
+
+## Introduction to Access Modifiers
+Access modifiers in Python are used to define the accessibility of class members (attributes and methods). They help in encapsulating data and preventing accidental modifications. The three main types of access levels are:
+
+- **Public**
+- **Protected**
+- **Private**
+
+## Public Access
+- **Public members** are accessible from anywhere, both inside and outside the class.
+- In Python, all members are public by default.
+
+```python
+class Animal:
+    def __init__(self, name, species):
+        self.name = name  # Public attribute
+        self.species = species  # Public attribute
+
+    def make_sound(self):
+        print(f"{self.name} makes a sound.")  # Public method
+
+# Create an object of Anima
+
 
 ### 1. Introduction to Access Modifiers
 
