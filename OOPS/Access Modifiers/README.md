@@ -31,32 +31,6 @@ class Animal:
     def make_sound(self):
         print(f"{self.name} makes a sound.")  # Public method
 
-# Create an object of Anima
-
-
-### 1. Introduction to Access Modifiers
-
-Access modifiers in Python are used to define the accessibility of class members (attributes and methods). They help in encapsulating data and preventing accidental modifications. The three main types of access levels are:
-
-- **Public**
-- **Protected**
-- **Private**
-
-### 2. Public Access
-
-- **Public members** are accessible from anywhere, both inside and outside the class.
-- In Python, all members are public by default.
-
-### Example: Public Members
-
-```python
-class Animal:
-    def __init__(self, name, species):
-        self.name = name  # Public attribute
-        self.species = species  # Public attribute
-
-    def make_sound(self):
-        print(f"{self.name} makes a sound.")  # Public method
 
 # Create an object of Animal
 dog = Animal("Buddy", "Dog")
