@@ -1,5 +1,3 @@
-Sure, let's start with a brief explanation of encapsulation before diving into the README file. 
-
 ### Encapsulation
 
 **Encapsulation** is one of the fundamental principles of object-oriented programming (OOP). It refers to the bundling of data (attributes) and methods (functions) that operate on that data into a single unit, known as a class. Encapsulation also restricts direct access to some of an object's components, which can prevent the accidental modification of data.
