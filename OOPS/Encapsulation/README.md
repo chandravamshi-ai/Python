@@ -42,9 +42,7 @@ class Account:
 
     def withdraw(self, amount):
         if 0 < amount <= self.__balance:
-            self
-
-.__balance -= amount
+            self.__balance -= amount
             print(f"Withdrew {amount}. New balance is {self.__balance}.")
         else:
             print("Invalid withdrawal amount!")
