@@ -321,3 +321,114 @@ Animal (Abstract Class)
 By understanding this hierarchy and type relationships, you can see how polymorphism works and how different classes and objects relate to each other.
 
 ---
+
+
+If a subclass of an abstract class contains at least one abstract method (decorated with `@abstractmethod`), it is also considered an abstract class. This means you cannot instantiate that subclass directly. To make it a concrete class that can be instantiated, all abstract methods must be implemented.
+
+Let's break this down with clear examples.
+
+### Example 1: Subclass with Abstract Methods
+
+In this example, the subclass `Mammal` inherits from `Animal` and adds its own abstract method `give_birth`. Since `Mammal` contains an abstract method, it is also an abstract class and cannot be instantiated.
+
+```python
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    @abstractmethod
+    def make_sound(self):
+        pass
+
+class Mammal(Animal):
+    @abstractmethod
+    def give_birth(self):
+        pass
+
+# Attempt to instantiate Mammal
+try:
+    mammal = Mammal()
+except TypeError as e:
+    print(e)  # Output: Can't instantiate abstract class Mammal with abstract methods give_birth
+```
+
+### Explanation
+
+- `Animal` is an abstract class with one abstract method `make_sound`.
+- `Mammal` inherits from `Animal` and adds its own abstract method `give_birth`.
+- Since `Mammal` has an abstract method, it is also an abstract class and cannot be instantiated.
+
+### Example 2: Subclass with All Abstract Methods Implemented
+
+In this example, the subclass `Dog` inherits from `Mammal` and implements all abstract methods. This makes `Dog` a concrete class that can be instantiated.
+
+```python
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    @abstractmethod
+    def make_sound(self):
+        pass
+
+class Mammal(Animal):
+    @abstractmethod
+    def give_birth(self):
+        pass
+
+class Dog(Mammal):
+    def make_sound(self):
+        print("Dog barks.")
+
+    def give_birth(self):
+        print("Dog gives birth to puppies.")
+
+# Instantiate Dog
+dog = Dog()
+dog.make_sound()  # Output: Dog barks.
+dog.give_birth()  # Output: Dog gives birth to puppies.
+```
+
+### Explanation
+
+- `Dog` inherits from `Mammal` and provides concrete implementations for both `make_sound` and `give_birth`.
+- Since `Dog` implements all abstract methods, it is a concrete class and can be instantiated.
+
+### Example 3: Partially Implemented Abstract Methods in a Subclass
+
+In this example, the subclass `Bat` inherits from `Mammal` and implements only one of the abstract methods. Since it does not implement all abstract methods, it remains an abstract class.
+
+```python
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    @abstractmethod
+    def make_sound(self):
+        pass
+
+class Mammal(Animal):
+    @abstractmethod
+    def give_birth(self):
+        pass
+
+class Bat(Mammal):
+    def make_sound(self):
+        print("Bat squeaks.")
+
+# Attempt to instantiate Bat
+try:
+    bat = Bat()
+except TypeError as e:
+    print(e)  # Output: Can't instantiate abstract class Bat with abstract methods give_birth
+```
+
+### Explanation
+
+- `Bat` inherits from `Mammal` and implements `make_sound` but not `give_birth`.
+- Since `Bat` does not implement all abstract methods, it remains an abstract class and cannot be instantiated.
+
+### Summary
+
+- **Abstract Class**: A class with at least one abstract method.
+- **Concrete Class**: A class that implements all abstract methods from its abstract base classes.
+- **Instantiation**: Only concrete classes can be instantiated. Abstract classes cannot be instantiated.
+
+To ensure a subclass is not abstract, you must implement all abstract methods from its parent abstract classes. If even one abstract method remains unimplemented, the subclass itself will be abstract. This design enforces a consistent interface and ensures that derived classes provide specific implementations for the required methods.
