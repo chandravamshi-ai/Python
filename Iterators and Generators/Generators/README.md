@@ -244,3 +244,166 @@ for line in read_large_file('large_file.txt'):
   - **Advanced Generator Methods**: `send()`, `throw()`, and `close()` for more control.
   - **Use Cases**: Ideal for handling large datasets or streams of data.
 
+---
+
+### Generator Methods
+
+Generators in Python are powerful because they allow you to work with data in a memory-efficient way, generating values on-the-fly. In addition to basic functionality using `yield`, generators have several methods that provide more advanced features. Let's explore these methods in detail.
+
+1. **`__iter__()`**
+2. **`__next__()`**
+3. **`send(value)`**
+4. **`throw(type, value=None, traceback=None)`**
+5. **`close()`**
+
+#### 1. `__iter__()`
+
+The `__iter__()` method returns the iterator object itself. This is what allows a generator to be used in a `for` loop.
+
+#### 2. `__next__()`
+
+The `__next__()` method returns the next value from the generator. If the generator has no more values to yield, it raises `StopIteration`.
+
+### Advanced Generator Methods
+
+#### 3. `send(value)`
+
+The `send(value)` method resumes the generator's execution and "sends" a value into the generator. The value sent becomes the result of the current `yield` expression.
+
+- If the generator is just starting, `send(None)` must be called to start it.
+- The value sent in becomes the result of the `yield` expression.
+
+**Example**:
+
+```python
+def my_generator():
+    received = yield "Initial"
+    while True:
+        received = yield f"Received: {received}"
+
+# Create the generator object
+gen = my_generator()
+
+# Start the generator
+print(next(gen))  # Output: Initial
+
+# Send a value into the generator
+print(gen.send("Hello"))  # Output: Received: Hello
+print(gen.send("World"))  # Output: Received: World
+```
+
+#### 4. `throw(type, value=None, traceback=None)`
+
+The `throw(type, value=None, traceback=None)` method allows you to raise an exception at the point where the generator was paused. This is useful for error handling within the generator.
+
+**Example**:
+
+```python
+def my_generator():
+    try:
+        yield "Start"
+        yield "Middle"
+    except ValueError:
+        yield "Handled ValueError"
+    yield "End"
+
+# Create the generator object
+gen = my_generator()
+
+# Start the generator
+print(next(gen))  # Output: Start
+
+# Move to the next yield
+print(next(gen))  # Output: Middle
+
+# Throw an exception into the generator
+print(gen.throw(ValueError))  # Output: Handled ValueError
+
+# Continue after exception
+print(next(gen))  # Output: End
+```
+
+#### 5. `close()`
+
+The `close()` method stops the generator by raising a `GeneratorExit` exception inside it. This can be used to clean up resources or perform other shutdown activities.
+
+**Example**:
+
+```python
+def my_generator():
+    try:
+        yield "Start"
+        yield "Middle"
+    except GeneratorExit:
+        print("Generator closed")
+    finally:
+        print("Cleanup code")
+
+# Create the generator object
+gen = my_generator()
+
+# Start the generator
+print(next(gen))  # Output: Start
+
+# Close the generator
+gen.close()  # Output: Generator closed, Cleanup code
+```
+
+### Summary of Generator Methods
+
+- **`__iter__()`**: Returns the iterator object itself.
+- **`__next__()`**: Returns the next value from the generator and raises `StopIteration` when done.
+- **`send(value)`**: Resumes the generator and sends a value that becomes the result of the current `yield` expression.
+- **`throw(type, value=None, traceback=None)`**: Raises an exception at the paused yield point in the generator.
+- **`close()`**: Stops the generator, raising a `GeneratorExit` exception inside it.
+
+### Practical Use Cases
+
+- **Data Processing Pipelines**: Generators are ideal for building pipelines where each stage processes data lazily.
+- **Event Handling**: Generators can be used to handle events or states over time.
+- **Resource Management**: Using `try`...`finally` blocks within generators can ensure resources are cleaned up properly when the generator is closed.
+
+### Example: Practical Pipeline
+
+Let's create a simple data processing pipeline using generators.
+
+```python
+def source():
+    for i in range(10):
+        yield i
+
+def filter_even(numbers):
+    for num in numbers:
+        if num % 2 == 0:
+            yield num
+
+def multiply_by_two(numbers):
+    for num in numbers:
+        yield num * 2
+
+# Create the pipeline
+pipeline = multiply_by_two(filter_even(source()))
+
+# Process the data
+for result in pipeline:
+    print(result)
+```
+
+**Output**:
+```
+0
+4
+8
+12
+16
+```
+
+In this example:
+- `source()` generates numbers from 0 to 9.
+- `filter_even(numbers)` filters out odd numbers.
+- `multiply_by_two(numbers)` multiplies each number by 2.
+- The pipeline processes the data lazily, generating results one at a time.
+
+By leveraging these advanced generator methods, you can create more sophisticated and efficient data processing workflows in Python. 
+
+---
