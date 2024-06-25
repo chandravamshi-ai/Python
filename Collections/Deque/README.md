@@ -75,6 +75,90 @@ my_deque = deque([1, 2, 3, 4, 5])
 - **Efficiency**: `deque` is more efficient for appending and popping elements from both ends (O(1) time complexity) compared to a list, which has O(n) time complexity for popping from the left end.
 - **Use Case**: Use `deque` when you need fast appends/pops from both ends. Use lists when you need random access to elements and perform fewer insertions/removals from the ends.
 
+### Time Complexity of List Operations
+
+In Python, lists are implemented as dynamic arrays. This means that accessing elements and appending elements to the end of the list are efficient (O(1) time complexity). However, certain operations, such as inserting or removing elements from positions other than the end, are less efficient.
+
+### Why Popping from the Left End of a List is O(n)
+
+When you pop an element from the left end of a list, the following operations take place:
+
+1. **Remove the First Element**: The first element of the list is removed.
+2. **Shift Elements**: All the remaining elements in the list are shifted one position to the left to fill the gap left by the removed element.
+
+#### Example
+
+Consider the list `[1, 2, 3, 4, 5]`. When you pop the first element (`1`), the following steps occur:
+
+1. **Remove the Element**:
+   - Remove `1`, leaving `[2, 3, 4, 5]`.
+
+2. **Shift Elements**:
+   - Shift `2` to the first position.
+   - Shift `3` to the second position.
+   - Shift `4` to the third position.
+   - Shift `5` to the fourth position.
+
+These shifts involve moving each element one position to the left, which takes O(n) time in the worst case, where n is the number of elements in the list.
+
+### Comparison with Deque
+
+A `deque` (double-ended queue) is implemented as a doubly linked list, which allows for efficient insertions and deletions from both ends.
+
+#### Why Deque Operations are O(1)
+
+In a deque:
+
+1. **Appending to the Right**: Simply add a new node to the end of the linked list.
+2. **Appending to the Left**: Simply add a new node to the start of the linked list.
+3. **Popping from the Right**: Remove the last node of the linked list.
+4. **Popping from the Left**: Remove the first node of the linked list.
+
+These operations involve updating a few pointers (for linked list nodes), which takes constant time, O(1), regardless of the number of elements in the deque.
+
+### Practical Example: List vs. Deque
+
+Let's demonstrate the time complexity difference with a practical example:
+
+#### Using a List
+
+```python
+import time
+
+# Create a list with 1 million elements
+my_list = list(range(1000000))
+
+# Measure the time to pop an element from the left end
+start_time = time.time()
+my_list.pop(0)
+end_time = time.time()
+
+print(f"Time to pop from the left end of a list: {end_time - start_time} seconds")
+```
+
+#### Using a Deque
+
+```python
+from collections import deque
+import time
+
+# Create a deque with 1 million elements
+my_deque = deque(range(1000000))
+
+# Measure the time to pop an element from the left end
+start_time = time.time()
+my_deque.popleft()
+end_time = time.time()
+
+print(f"Time to pop from the left end of a deque: {end_time - start_time} seconds")
+```
+
+### Expected Results
+
+- **List**: The time to pop from the left end will be relatively high because of the O(n) time complexity due to the shifting of elements.
+- **Deque**: The time to pop from the left end will be very low because of the O(1) time complexity with no shifting of elements.
+
+
 #### Deque vs. Queue
 
 - **Single End Operations**: The `queue.Queue` is designed for single-ended operations (FIFO) with thread-safety, while `deque` supports efficient operations on both ends but is not inherently thread-safe.
