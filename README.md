@@ -1,5 +1,7 @@
 # Python
 
+Complete Python course form beginner to advance concepts
+<!---
 ### Enhanced Roadmap to Becoming a Python Pro
 
 **Resources:**
@@ -262,5 +264,5 @@ Project Ideas
    9. **Indian Railway Announcement System**
    10. **End-to-End ML Project**
    11. **Umpire Decision Review System (DRS)**
+--->
 
----
